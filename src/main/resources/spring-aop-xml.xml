@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="tech.changyan.hello.spring.aop" />
+
+    <aop:config>
+        <aop:aspect id="helloAspect" ref="helloAspect">
+            <!--<aop:pointcut id="helloPointcut" expression="execution(* HelloAspectService.*(..))"/>-->
+            <!--<aop:before method="before" pointcut-ref="helloPointcut"/>-->
+            <!--<aop:after-returning method="afterReturning" pointcut-ref="helloPointcut"/>-->
+            <!--<aop:after-throwing method="afterThrowing" pointcut-ref="helloPointcut"/>-->
+            <!--<aop:after method="after" pointcut-ref="helloPointcut"/>-->
+            <!--<aop:around method="around" pointcut-ref="helloPointcut" />-->
+
+            <aop:around method="aroundParams" pointcut="execution(* tech.changyan.hello.spring.aop.xml.HelloAspectService.hello(String, int))
+                and args(name, age)"/>
+            
+            <aop:declare-parents types-matching="tech.changyan.hello.aop.xml.*+"
+                                 implement-interface="tech.changyan.hello.spring.aop.xml.HelloIntroduction"
+                                 default-impl="tech.changyan.hello.spring.aop.xml.HelloIntroductionImpl"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

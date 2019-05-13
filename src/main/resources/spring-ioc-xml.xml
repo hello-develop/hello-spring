@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloInterface" class="tech.changyan.hello.spring.ioc.xml.iop.HelloInterfaceImpl"/>
+
+    <bean id="helloInjectionService" class="tech.changyan.hello.spring.ioc.xml.injection.service.HelloInjectionServiceImpl">
+        <!--<constructor-arg name="helloInjectionDAO" ref="helloInjectionDAO"/>-->
+        <property name="helloInjectionDAO" ref="helloInjectionDAO"/>
+    </bean>
+
+    <bean id="helloInjectionDAO" class="tech.changyan.hello.spring.ioc.xml.injection.dao.HelloInjectionDAOImpl"/>
+
+    <bean id="helloBeanScope" class="tech.changyan.hello.spring.ioc.xml.bean.HelloBeanScope" scope="singleton"/>
+
+    <bean id="helloBeanLifecycle" class="tech.changyan.hello.spring.ioc.xml.bean.HelloBeanLifecycle" init-method="start" destroy-method="stop" lazy-init="true"/>
+
+    <bean id="helloApplicationContextAware" class="tech.changyan.hello.spring.ioc.xml.aware.HelloApplicationContextAware" lazy-init="true"/>
+    <bean id="helloBeanNameAware" class="tech.changyan.hello.spring.ioc.xml.aware.HelloBeanNameAware" scope="singleton"/>
+
+</beans>
