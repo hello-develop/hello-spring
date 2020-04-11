@@ -15,12 +15,12 @@
             <!--<aop:after method="after" pointcut-ref="helloPointcut"/>-->
             <!--<aop:around method="around" pointcut-ref="helloPointcut" />-->
 
-            <aop:around method="aroundParams" pointcut="execution(* tech.changyan.hello.spring.aop.xml.HelloAspectService.hello(String, int))
+            <aop:around method="aroundParams" pointcut="execution(* cn.znvis.hello.spring.aop.xml.HelloAspectService.hello(String, int))
                 and args(name, age)"/>
 
             <aop:declare-parents types-matching="tech.changyan.hello.aop.xml.*+"
-                                 implement-interface="tech.changyan.hello.spring.aop.xml.HelloIntroduction"
-                                 default-impl="tech.changyan.hello.spring.aop.xml.HelloIntroductionImpl"/>
+                                 implement-interface="cn.znvis.hello.spring.aop.xml.HelloIntroduction"
+                                 default-impl="cn.znvis.hello.spring.aop.xml.HelloIntroductionImpl"/>
         </aop:aspect>
     </aop:config>
 
