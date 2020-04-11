@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConcurrentOperationDemo {
 
-    public void normalInvoke(){
+    public void normalInvoke() {
         System.out.println("[HELLO] normal invoke");
     }
 
-    public void exceptionalInvoke(){
+    public void exceptionalInvoke() {
 
         throw new PessimisticLockingFailureException("");
 

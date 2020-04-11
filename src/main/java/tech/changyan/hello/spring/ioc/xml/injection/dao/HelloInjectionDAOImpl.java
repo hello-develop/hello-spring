@@ -4,6 +4,6 @@ public class HelloInjectionDAOImpl implements HelloInjectionDAO {
 
     @Override
     public void save(String arg) {
-        System.out.println("[HELLO] DAO保存数据："+arg);
+        System.out.println("[HELLO] DAO保存数据：" + arg);
     }
 }

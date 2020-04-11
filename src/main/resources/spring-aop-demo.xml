@@ -9,7 +9,8 @@
 
     <aop:config>
         <aop:aspect id="concurrentOperationRetryAspect" ref="concurrentOperationRetryAspect">
-            <aop:pointcut id="concurrentOperationRetryPointcut" expression="execution(* tech.changyan.hello.spring.aop.xml.demo.*.*(..))"/>
+            <aop:pointcut id="concurrentOperationRetryPointcut"
+                          expression="execution(* tech.changyan.hello.spring.aop.xml.demo.*.*(..))"/>
             <aop:around method="doConcurrentOperation" pointcut-ref="concurrentOperationRetryPointcut"/>
         </aop:aspect>
     </aop:config>

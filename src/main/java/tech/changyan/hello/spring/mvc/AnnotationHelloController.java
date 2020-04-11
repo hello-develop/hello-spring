@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AnnotationHelloController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String printHello(ModelMap mm, Model model){
+    public String printHello(ModelMap mm, Model model) {
         System.out.println("hllle");
         mm.addAttribute("message", "hello annotation~~1");
         return "annotation_hello";

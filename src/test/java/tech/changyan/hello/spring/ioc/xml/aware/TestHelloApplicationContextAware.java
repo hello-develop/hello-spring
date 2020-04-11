@@ -9,12 +9,12 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 public class TestHelloApplicationContextAware extends UnitTestBase {
 
     @Test
-    public void testApplicationContextAware(){
+    public void testApplicationContextAware() {
         System.out.println("[HELLO] HelloApplicationContext: " + super.getBean("helloApplicationContextAware").hashCode());
     }
 
     @Test
-    public void testApplicationContext(){
+    public void testApplicationContext() {
         HelloApplicationContextAware aca = super.getBean("helloApplicationContextAware");
         aca.hello();
     }

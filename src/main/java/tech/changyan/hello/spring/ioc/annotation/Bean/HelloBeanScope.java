@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class HelloBeanScope {
 
-    public void printBeanScope(){
+    public void printBeanScope() {
         System.out.println("[HELLO] bean Scope: " + this.hashCode());
     }
 }

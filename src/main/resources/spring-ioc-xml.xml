@@ -5,7 +5,8 @@
 
     <bean id="helloInterface" class="tech.changyan.hello.spring.ioc.xml.iop.HelloInterfaceImpl"/>
 
-    <bean id="helloInjectionService" class="tech.changyan.hello.spring.ioc.xml.injection.service.HelloInjectionServiceImpl">
+    <bean id="helloInjectionService"
+          class="tech.changyan.hello.spring.ioc.xml.injection.service.HelloInjectionServiceImpl">
         <!--<constructor-arg name="helloInjectionDAO" ref="helloInjectionDAO"/>-->
         <property name="helloInjectionDAO" ref="helloInjectionDAO"/>
     </bean>
@@ -14,9 +15,12 @@
 
     <bean id="helloBeanScope" class="tech.changyan.hello.spring.ioc.xml.bean.HelloBeanScope" scope="singleton"/>
 
-    <bean id="helloBeanLifecycle" class="tech.changyan.hello.spring.ioc.xml.bean.HelloBeanLifecycle" init-method="start" destroy-method="stop" lazy-init="true"/>
+    <bean id="helloBeanLifecycle" class="tech.changyan.hello.spring.ioc.xml.bean.HelloBeanLifecycle" init-method="start"
+          destroy-method="stop" lazy-init="true"/>
 
-    <bean id="helloApplicationContextAware" class="tech.changyan.hello.spring.ioc.xml.aware.HelloApplicationContextAware" lazy-init="true"/>
-    <bean id="helloBeanNameAware" class="tech.changyan.hello.spring.ioc.xml.aware.HelloBeanNameAware" scope="singleton"/>
+    <bean id="helloApplicationContextAware"
+          class="tech.changyan.hello.spring.ioc.xml.aware.HelloApplicationContextAware" lazy-init="true"/>
+    <bean id="helloBeanNameAware" class="tech.changyan.hello.spring.ioc.xml.aware.HelloBeanNameAware"
+          scope="singleton"/>
 
 </beans>

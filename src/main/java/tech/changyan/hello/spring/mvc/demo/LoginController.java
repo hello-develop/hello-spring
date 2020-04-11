@@ -14,19 +14,19 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @RequestMapping(value="/login", method= RequestMethod.GET)
-    public String index(){
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String index() {
         return "login";
     }
 
-    @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String login(HttpServletRequest httpServletRequest, ModelMap modelMap){
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(HttpServletRequest httpServletRequest, ModelMap modelMap) {
         String username = httpServletRequest.getParameter("username");
         String password = httpServletRequest.getParameter("password");
-        if(loginService.login(username, password)){
+        if (loginService.login(username, password)) {
             modelMap.addAttribute("username", username);
             return "user";
-        }else{
+        } else {
             modelMap.addAttribute("error_msg", "用户名或密码错误");
             return "login";
         }

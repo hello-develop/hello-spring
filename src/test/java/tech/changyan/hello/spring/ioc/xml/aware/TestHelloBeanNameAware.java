@@ -9,7 +9,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 public class TestHelloBeanNameAware extends UnitTestBase {
 
     @Test
-    public void testBeanNameAware(){
+    public void testBeanNameAware() {
         System.out.println("[HELLO] Test bean Instance: " + super.getBean("helloBeanNameAware").hashCode());
     }
 }

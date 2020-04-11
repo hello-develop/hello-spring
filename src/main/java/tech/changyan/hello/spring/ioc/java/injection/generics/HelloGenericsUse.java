@@ -11,11 +11,11 @@ public class HelloGenericsUse {
     @Autowired
     private HelloGenerics<String> helloGenericsString;
 
-    public void useGenericsString(String msg){
+    public void useGenericsString(String msg) {
         System.out.println("[HELLO] Use String: " + this.helloGenericsString.info(msg));
     }
 
-    public void useGenericsInteger(Integer msg){
+    public void useGenericsInteger(Integer msg) {
         System.out.println("[HELLO] Use Integer: " + this.helloGenericsInteger.info(msg));
     }
 }

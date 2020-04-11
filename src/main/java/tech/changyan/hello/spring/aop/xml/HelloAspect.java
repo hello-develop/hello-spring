@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloAspect {
 
-    public void before(){
+    public void before() {
         System.out.println("[HELLO] HelloAspect before");
     }
 
-    public void afterReturning(){
+    public void afterReturning() {
         System.out.println("[HELLO] HelloAspect after returning");
     }
 
-    public void afterThrowing(){
+    public void afterThrowing() {
         System.out.println("[HELLO] HelloAspect after throwing");
     }
 
-    public void after(){
+    public void after() {
         System.out.println("[HELLO] HelloAspect after");
     }
 
@@ -32,7 +32,7 @@ public class HelloAspect {
         return obj;
     }
 
-    public Object aroundParams(ProceedingJoinPoint pjp, String name, int age) throws Throwable{
+    public Object aroundParams(ProceedingJoinPoint pjp, String name, int age) throws Throwable {
         Object obj = null;
 
         System.out.println("[HELLO] HelloAspect aroundParams 1: " + name + " " + age);

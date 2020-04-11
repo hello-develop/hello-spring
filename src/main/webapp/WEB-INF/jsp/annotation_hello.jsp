@@ -11,6 +11,6 @@
     <title>Annotation Hello</title>
 </head>
 <body>
-    ${message}
+${message}
 </body>
 </html>

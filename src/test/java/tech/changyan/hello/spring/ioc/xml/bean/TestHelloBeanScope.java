@@ -8,12 +8,12 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 @RunWith(BlockJUnit4ClassRunner.class)
 public class TestHelloBeanScope extends UnitTestBase {
 
-    public TestHelloBeanScope(){
+    public TestHelloBeanScope() {
         super("classpath:spring-ioc-xml.xml");
     }
 
     @Test
-    public void testPrintBeanScope(){
+    public void testPrintBeanScope() {
         HelloBeanScope bs = super.getBean("helloBeanScope");
         bs.printBeanScope();
 

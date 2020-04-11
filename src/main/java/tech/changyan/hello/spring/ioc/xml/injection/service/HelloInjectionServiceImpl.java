@@ -6,8 +6,8 @@ public class HelloInjectionServiceImpl implements HelloInjectionService {
 
     private HelloInjectionDAO helloInjectionDAO;
 
-    public void save(String arg){
-        System.out.println("[HELLO] Service接收参数："+arg);
+    public void save(String arg) {
+        System.out.println("[HELLO] Service接收参数：" + arg);
         arg = arg + "-" + this.hashCode();
         helloInjectionDAO.save(arg);
     }

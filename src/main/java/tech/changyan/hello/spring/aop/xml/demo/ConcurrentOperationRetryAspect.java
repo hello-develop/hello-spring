@@ -15,18 +15,18 @@ public class ConcurrentOperationRetryAspect {
         this.maxRetries = maxRetries;
     }
 
-    public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable{
+    public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
         int attempNum = 0;
         PessimisticLockingFailureException pessimisticLockingFailureException;
-        do{
+        do {
             attempNum++;
-            System.out.println("[HELLO] try times: "+attempNum);
+            System.out.println("[HELLO] try times: " + attempNum);
             try {
                 return pjp.proceed();
-            }catch (PessimisticLockingFailureException ex){
+            } catch (PessimisticLockingFailureException ex) {
                 pessimisticLockingFailureException = ex;
             }
-        }while(attempNum<=this.maxRetries);
+        } while (attempNum <= this.maxRetries);
         System.out.println("[HELLO] try error");
         throw pessimisticLockingFailureException;
 

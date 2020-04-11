@@ -5,7 +5,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class ConcurrentOperationDemoTest extends UnitTestBase {
 
-    public ConcurrentOperationDemoTest(){
+    public ConcurrentOperationDemoTest() {
         super("spring-aop-demo.xml");
     }
 

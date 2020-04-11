@@ -5,7 +5,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class HelloDataManagerTest extends UnitTestBase {
 
-    public HelloDataManagerTest(){
+    public HelloDataManagerTest() {
         super("spring-ioc-java.xml");
     }
 

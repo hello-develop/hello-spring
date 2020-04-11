@@ -1,12 +1,11 @@
 package tech.changyan.hello.spring.aop.annotation.demo.concurrent;
 
 import org.junit.Test;
-import tech.changyan.hello.spring.aop.annotation.demo.concurrent.ConcurrentDemo;
 import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class ConcurrentDemoTest extends UnitTestBase {
 
-    public ConcurrentDemoTest(){
+    public ConcurrentDemoTest() {
         super("spring-aop-annotation.xml");
     }
 

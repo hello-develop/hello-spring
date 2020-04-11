@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestInit {
 
-    public TestInit(){
+    public TestInit() {
         System.out.println("TestInit");
     }
 }

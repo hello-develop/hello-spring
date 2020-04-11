@@ -2,7 +2,11 @@ package tech.changyan.hello.spring.mvc.demo;
 
 import org.springframework.stereotype.Service;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Service
 public class LoginService {
@@ -24,25 +28,25 @@ public class LoginService {
             pstat = conn.prepareStatement(sql);
             pstat.setString(1, username);
             pstat.setString(2, password);
-            ResultSet rs =pstat.executeQuery();
-            if(rs.next()){
+            ResultSet rs = pstat.executeQuery();
+            if (rs.next()) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            if(conn!=null){
+        } finally {
+            if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            if(pstat!=null){
+            if (pstat != null) {
                 try {
                     pstat.close();
                 } catch (SQLException e) {

@@ -1,6 +1,5 @@
 package tech.changyan.hello.spring.ioc.annotation.injection.collection;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -10,42 +9,42 @@ import java.util.Map;
 @Component
 public class HelloCollectionInjection {
 
-    @Autowired
-    private List<HelloInterface> list;
+    private final List<HelloInterface> list;
 
-    @Autowired
-    private Map<String, HelloInterface> map;
+    private final Map<String, HelloInterface> map;
 
-    @Autowired
-    @Qualifier("helloInterfaceTwoImpl")
-    private HelloInterface helloInterface;
+    private final HelloInterface helloInterface;
 
-    public void traversal(){
-        if(list != null && list.size() != 0 ){
-            for(HelloInterface helloInterface : list){
+    public HelloCollectionInjection(List<HelloInterface> list, Map<String, HelloInterface> map, @Qualifier("helloInterfaceTwoImpl") HelloInterface helloInterface) {
+        this.list = list;
+        this.map = map;
+        this.helloInterface = helloInterface;
+    }
+
+    public void traversal() {
+        if (list != null && list.size() != 0) {
+            for (HelloInterface helloInterface : list) {
                 System.out.println("[HELLO] list traversal: " + helloInterface.getClass().getName());
             }
-        }else{
+        } else {
             System.out.println("[HELLO] list is null");
         }
 
-        if(map != null && map.size() != 0) {
-            for(Map.Entry<String, HelloInterface> entry : map.entrySet()){
+        if (map != null && map.size() != 0) {
+            for (Map.Entry<String, HelloInterface> entry : map.entrySet()) {
                 System.out.println("[HELLO] map traversal: " + entry.getValue().getClass().getName());
             }
         } else {
             System.out.println("[HELLO] map is mull");
         }
 
-        if(this.helloInterface != null) {
+        if (this.helloInterface != null) {
             System.out.println("[HELLO] helloInterface: " + helloInterface.getClass().getName());
-        }else{
+        } else {
             System.out.println("[HELLO] helloInterface is null");
         }
 
     }
-
-
 
 
 }

@@ -19,7 +19,7 @@ public class HelloAppConfig {
     private String password;
 
     @Bean
-    public HelloDataManager helloDataManager(){
+    public HelloDataManager helloDataManager() {
         return new HelloDataManager(url, username, password);
     }
 

@@ -5,7 +5,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class HelloIntroductionServiceTest extends UnitTestBase {
 
-    public HelloIntroductionServiceTest(){
+    public HelloIntroductionServiceTest() {
         super("spring-aop-xml.xml");
     }
 

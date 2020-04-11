@@ -5,7 +5,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class HelloAnnotationTest extends UnitTestBase {
 
-    public HelloAnnotationTest(){
+    public HelloAnnotationTest() {
         super("spring-ioc-annotation.xml");
     }
 

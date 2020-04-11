@@ -14,7 +14,7 @@ public class HelloApplicationContextAware implements ApplicationContextAware {
         System.out.println("[HELLO] ApplicationContext: " + applicationContext.getBean("helloApplicationContextAware").hashCode());
     }
 
-    public void hello(){
+    public void hello() {
         System.out.println("[HELLO] ApplicationContextDisplayName: " + this.applicationContext.getDisplayName());
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloAnnotation {
 
-    public void printHello(){
+    public void printHello() {
         System.out.println("[HELLO] Hello Annotation");
     }
 }

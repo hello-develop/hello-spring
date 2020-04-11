@@ -12,33 +12,34 @@ public class UnitTestBase {
 
     private String springXmlPath;
 
-    public UnitTestBase(){}
+    public UnitTestBase() {
+    }
 
-    public UnitTestBase(String springXmlPath){
+    public UnitTestBase(String springXmlPath) {
         this.springXmlPath = springXmlPath;
     }
 
     @Before
-    public void before(){
-        if(StringUtils.isEmpty(springXmlPath)){
+    public void before() {
+        if (StringUtils.isEmpty(springXmlPath)) {
             springXmlPath = "classpath:spring-overall.xml";
         }
-        try{
+        try {
             context = new ClassPathXmlApplicationContext(springXmlPath.split("[,\\s]+"));
             context.start();
-        }catch (BeansException e){
+        } catch (BeansException e) {
             e.printStackTrace();
         }
     }
 
     @After
-    public void after(){
+    public void after() {
         context.close();
     }
 
     @SuppressWarnings("unchecked")
-    protected <T extends Object> T getBean(String beanId){
-        return (T)context.getBean(beanId);
+    protected <T> T getBean(String beanId) {
+        return (T) context.getBean(beanId);
     }
 
 }

@@ -8,7 +8,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 @RunWith(BlockJUnit4ClassRunner.class)
 public class HelloBeanScopeTest extends UnitTestBase {
 
-    public HelloBeanScopeTest(){
+    public HelloBeanScopeTest() {
         super("spring-ioc-annotation.xml");
     }
 

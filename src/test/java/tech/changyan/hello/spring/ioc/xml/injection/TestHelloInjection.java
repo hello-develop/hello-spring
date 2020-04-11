@@ -9,18 +9,18 @@ import tech.changyan.hello.spring.ioc.xml.injection.service.HelloInjectionServic
 @RunWith(BlockJUnit4ClassRunner.class)
 public class TestHelloInjection extends UnitTestBase {
 
-    public TestHelloInjection(){
+    public TestHelloInjection() {
         super("classpath:spring-ioc-xml.xml");
     }
 
     @Test
-    public void testSetter(){
+    public void testSetter() {
         HelloInjectionService service = super.getBean("helloInjectionService");
         service.save("cc");
     }
 
     @Test
-    public void testConstrctor(){
+    public void testConstrctor() {
         HelloInjectionService service = super.getBean("helloInjectionService");
         service.save("cc");
     }

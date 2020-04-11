@@ -1,7 +1,10 @@
 package tech.changyan.hello.spring.aop.annotation.demo.concurrent;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.stereotype.Component;
@@ -19,7 +22,8 @@ public class ConcurrentAspect {
     }
 
     @Pointcut("execution(* tech.changyan.hello.spring.aop.annotation.demo.concurrent.*.*(..))")
-    private void concurrentPointcut(){}
+    private void concurrentPointcut() {
+    }
 
     @Before("concurrentPointcut()")
     private void before() {
@@ -27,15 +31,15 @@ public class ConcurrentAspect {
     }
 
     @Around("concurrentPointcut()")
-    public Object doConcurrent(ProceedingJoinPoint pjp) throws Throwable{
+    public Object doConcurrent(ProceedingJoinPoint pjp) throws Throwable {
         int attempNum = 1;
         PessimisticLockingFailureException pessimisticLockingFailureException = null;
 
-        while(attempNum<=this.maxRetries){
+        while (attempNum <= this.maxRetries) {
             System.out.println("[HELLO] try times: " + attempNum);
-            try{
+            try {
                 return pjp.proceed();
-            }catch (PessimisticLockingFailureException e){
+            } catch (PessimisticLockingFailureException e) {
                 pessimisticLockingFailureException = e;
             }
             attempNum++;

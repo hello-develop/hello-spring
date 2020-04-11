@@ -8,16 +8,15 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 @RunWith(BlockJUnit4ClassRunner.class)
 public class TestHelloBeanLifecycle extends UnitTestBase {
 
-    public TestHelloBeanLifecycle(){
+    public TestHelloBeanLifecycle() {
         super("classpath:spring-ioc-xml.xml");
     }
 
     @Test
-    public void testBeanLifecycle(){
+    public void testBeanLifecycle() {
         super.getBean("helloBeanLifecycle");
 
     }
-
 
 
 }

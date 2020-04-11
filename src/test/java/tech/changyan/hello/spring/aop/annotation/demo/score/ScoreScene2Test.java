@@ -3,11 +3,9 @@ package tech.changyan.hello.spring.aop.annotation.demo.score;
 import org.junit.Test;
 import tech.changyan.hello.spring.base.UnitTestBase;
 
-import static org.junit.Assert.*;
-
 public class ScoreScene2Test extends UnitTestBase {
 
-    public ScoreScene2Test(){
+    public ScoreScene2Test() {
         super("spring-aop-annotation.xml");
     }
 

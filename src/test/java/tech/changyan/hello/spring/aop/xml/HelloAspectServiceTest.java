@@ -5,7 +5,7 @@ import tech.changyan.hello.spring.base.UnitTestBase;
 
 public class HelloAspectServiceTest extends UnitTestBase {
 
-    public HelloAspectServiceTest(){
+    public HelloAspectServiceTest() {
         super("spring-aop-xml.xml");
     }
 

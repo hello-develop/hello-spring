@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class HelloGenericsConfig {
 
-//    @bean
+    //    @bean
 //    public HelloGenericsStringImpl helloGenericsStringImpl(){
 //        return new HelloGenericsStringImpl();
 //    }
 //
     @Bean
-    public HelloGenericsIntegerImpl helloGenericsIntegerImpl(){
+    public HelloGenericsIntegerImpl helloGenericsIntegerImpl() {
         return new HelloGenericsIntegerImpl();
     }
 

@@ -30,9 +30,9 @@ public class HelloInjectionServiceImpl implements HelloInjectionService {
 
     @Override
     public void save(String msg) {
-        System.out.println("[HELLO] Service接收参数："+msg);
+        System.out.println("[HELLO] Service接收参数：" + msg);
         msg = msg + "-" + this.hashCode();
-        System.out.println("[HELLO] Service处理参数："+msg);
+        System.out.println("[HELLO] Service处理参数：" + msg);
         this.helloInjectionDAO.save(msg);
     }
 }
